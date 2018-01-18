@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Profil extends Migration
+class Files extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,7 @@ class Profil extends Migration
      */
     public function up()
     {
-        //tabel Profil
-        Schema::create('profil', function (Blueprint $table) {
-            $table->increments('id_profil');
-            $table->string('isi_profil');
-            $table->timestamp('created_at')->nullable();
-        });
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ class Profil extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profil');
+        //
     }
 }

@@ -13,7 +13,14 @@ class Kontak extends Migration
      */
     public function up()
     {
-        //
+        //tabel Kontak
+        Schema::create('kontak', function (Blueprint $table) {
+            $table->increments('id_kontak');
+            $table->string('alamat');
+            $table->string('longlat');
+            $table->string('kontak');
+            $table->timestamp('created_at')->nullable();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class Kontak extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('kontak');
     }
 }
