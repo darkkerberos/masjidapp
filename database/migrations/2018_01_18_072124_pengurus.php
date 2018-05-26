@@ -17,10 +17,10 @@ class Pengurus extends Migration
         Schema::create('pengurus', function (Blueprint $table) {
             $table->increments('id_pengurus');
             $table->string('nama_pengurus');
-            $table->string('email')->(unique);
-            $table->string('foto');
-            $table->string('phone');
-            $table->timestamp('created_at')->nullable();
+            $table->string('email')->unique();
+            $table->string('foto')->nullable();
+            $table->string('phone')->nullable();
+            $table->timestamps();
         });
     }
 

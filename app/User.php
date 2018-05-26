@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace MasjidApp;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,8 +14,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $primaryKey = 'id_user';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'id_user', 'name', 'email', 'password', 'role_id', 'is_deleted'
     ];
 
     /**
@@ -26,4 +28,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function pengurus(){
+        return $this->belongsTo('MasjidApp\Pengurus', 'email', 'email');
+    }
+
+    public function role(){
+        return $this->hasOne('MasjidApp\Models\Role', 'id', 'role_id');
+    }
+
+
 }

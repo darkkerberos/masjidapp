@@ -17,11 +17,11 @@ class BulletinJumat extends Migration
         Schema::create('bulletin_jumat', function (Blueprint $table) {
             $table->increments('id_jumat');
             $table->string('judul_khotbah');
-            $table->string('isi_khotbah');
+            $table->longText('isi_khotbah');
             $table->string('khatib');
             $table->string('tanggal_bulletin');
             $table->string('imam_jumat');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 

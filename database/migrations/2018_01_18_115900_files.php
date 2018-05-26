@@ -13,7 +13,16 @@ class Files extends Migration
      */
     public function up()
     {
-        //
+        //tabel files untuk nyimpen data file
+        Schema::create('files', function (Blueprint $table) {
+            $table->increments('id_files');
+            $table->string('file_name');
+            $table->string('display_name');
+            $table->string('extension');
+            $table->string('content_type');
+            $table->string('file_size');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class Files extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('files');
     }
 }

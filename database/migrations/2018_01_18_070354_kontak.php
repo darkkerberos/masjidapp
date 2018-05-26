@@ -19,7 +19,7 @@ class Kontak extends Migration
             $table->string('alamat');
             $table->string('longlat');
             $table->string('kontak');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 

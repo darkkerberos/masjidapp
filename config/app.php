@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://almagfirah.local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ return [
     | Application Fallback Locale
     |--------------------------------------------------------------------------
     |
-    | The fallback locale determines the locale to use when the current one
+    | The fallback l ocale determines the locale to use when the current one
     | is not available. You may change the value to correspond to any of
     | the language folders that are provided through your application.
     |
@@ -163,7 +163,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        MasjidApp\Providers\KategoriServiceProvider::class,
+        MasjidApp\Providers\DOMHelperServiceProvider::class,
+        MasjidApp\Providers\RouteHelperServiceProvider::class,
+        MasjidApp\Providers\ViewerStatisticHelperServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -171,11 +174,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        MasjidApp\Providers\AppServiceProvider::class,
+        MasjidApp\Providers\AuthServiceProvider::class,
+        // MasjidApp\Providers\BroadcastServiceProvider::class,
+        MasjidApp\Providers\EventServiceProvider::class,
+        MasjidApp\Providers\RouteServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 
@@ -225,6 +229,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Datatablees' => Yajra\DataTables\Facades\Datatables::class,
+        'KategoriHelp' => MasjidApp\Helpers\KategoriHelpers::class,
+        'DOMHelp' => MasjidApp\Helpers\DOMHelper::class,
+        'RouteHelp' => MasjidApp\Helpers\RouteHelpers::class,
+        'ViewerStatisticHelp' => MasjidApp\Helpers\ViewerStatisticHelper::class,
 
     ],
 

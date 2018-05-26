@@ -16,8 +16,8 @@ class Profil extends Migration
         //tabel Profil
         Schema::create('profil', function (Blueprint $table) {
             $table->increments('id_profil');
-            $table->string('isi_profil');
-            $table->timestamp('created_at')->nullable();
+            $table->longText('isi_profil');
+            $table->timestamps();
         });
     }
 
